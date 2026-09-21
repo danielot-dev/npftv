@@ -3,6 +3,11 @@ import { prisma } from "@/lib/prisma";
 
 const BASE_URL = "https://npftv.net";
 
+// Metadata route files (sitemap.ts, robots.ts) don't inherit the root
+// layout's dynamic config — this needs its own, or it still tries to
+// query the database at build time.
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [news, videos, programs, albums, press] = await Promise.all([
     prisma.newsArticle.findMany({

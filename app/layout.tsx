@@ -23,6 +23,13 @@ const condensed = Barlow_Condensed({
   display: "swap",
 });
 
+// This entire site is database-driven and content changes via the admin
+// dashboard need to appear immediately — so every page renders per-request
+// rather than being frozen into a static snapshot at build time. This also
+// avoids the build itself firing dozens of concurrent DB queries at once,
+// which can exceed Supabase's connection pool limit.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://npftv.net"),
   title: {
