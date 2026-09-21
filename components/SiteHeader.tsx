@@ -24,7 +24,7 @@ export default async function SiteHeader() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.jpeg"
+              src="/logo(1).jpeg"
               alt="Nigeria Police Force TV"
               width={44}
               height={44}
