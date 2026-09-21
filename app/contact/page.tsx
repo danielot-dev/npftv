@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ContactForm from "@/components/ContactForm";
+import SocialIcons from "@/components/SocialIcons";
 import { getSiteSettings } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Contact & Emergency Information" };
@@ -39,23 +40,9 @@ export default async function ContactPage() {
 
             <div className="mt-6 border border-navy/10 bg-white p-6">
               <h2 className="font-heading text-lg font-bold text-navy">Follow NPF TV</h2>
-              <ul className="mt-3 space-y-2 text-sm text-navy-dark">
-                {settings?.facebookUrl && (
-                  <li><a href={settings.facebookUrl} className="hover:text-gold-dark">Facebook</a></li>
-                )}
-                {settings?.twitterUrl && (
-                  <li><a href={settings.twitterUrl} className="hover:text-gold-dark">X (Twitter)</a></li>
-                )}
-                {settings?.instagramUrl && (
-                  <li><a href={settings.instagramUrl} className="hover:text-gold-dark">Instagram</a></li>
-                )}
-                {settings?.youtubeUrl && (
-                  <li><a href={settings.youtubeUrl} className="hover:text-gold-dark">YouTube</a></li>
-                )}
-                {!settings?.facebookUrl && !settings?.twitterUrl && !settings?.instagramUrl && !settings?.youtubeUrl && (
-                  <li className="text-navy-dark/50">Social links will appear here once added.</li>
-                )}
-              </ul>
+              <div className="mt-3">
+                <SocialIcons />
+              </div>
             </div>
           </div>
 
