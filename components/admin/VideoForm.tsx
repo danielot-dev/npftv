@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import ImageUploadField from "@/components/admin/ImageUploadField";
+import ActionForm, { SubmitButton, type ActionState } from "@/components/admin/ActionForm";
 import {
   inputClass,
   labelClass,
@@ -25,13 +26,13 @@ export default async function VideoForm({
   action,
   defaultValues,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   defaultValues?: VideoFormValues;
 }) {
   const programs = await prisma.program.findMany({ orderBy: { name: "asc" } });
 
   return (
-    <form action={action} className="max-w-2xl space-y-5">
+    <ActionForm action={action} className="max-w-2xl space-y-5">
       <div>
         <label className={labelClass} htmlFor="title">Title</label>
         <input id="title" name="title" required defaultValue={defaultValues?.title} className={inputClass} />
@@ -110,13 +111,11 @@ export default async function VideoForm({
       </label>
 
       <div className="flex gap-3 pt-2">
-        <button type="submit" className={primaryButtonClass}>
-          Save Video
-        </button>
+        <SubmitButton label="Save Video" className={primaryButtonClass} />
         <Link href="/admin/videos" className={secondaryButtonClass}>
           Cancel
         </Link>
       </div>
-    </form>
+    </ActionForm>
   );
 }

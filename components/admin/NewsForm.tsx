@@ -1,5 +1,6 @@
 import ImageUploadField from "@/components/admin/ImageUploadField";
 import { inputClass, labelClass, selectClass, textareaClass, primaryButtonClass, secondaryButtonClass } from "@/components/admin/formStyles";
+import ActionForm, { SubmitButton, type ActionState } from "@/components/admin/ActionForm";
 import Link from "next/link";
 
 type NewsFormValues = {
@@ -16,11 +17,11 @@ export default function NewsForm({
   action,
   defaultValues,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   defaultValues?: NewsFormValues;
 }) {
   return (
-    <form action={action} className="max-w-2xl space-y-5">
+    <ActionForm action={action} className="max-w-2xl space-y-5">
       <div>
         <label className={labelClass} htmlFor="title">Title</label>
         <input
@@ -89,13 +90,11 @@ export default function NewsForm({
       </label>
 
       <div className="flex gap-3 pt-2">
-        <button type="submit" className={primaryButtonClass}>
-          Save Article
-        </button>
+        <SubmitButton label="Save Article" className={primaryButtonClass} />
         <Link href="/admin/news" className={secondaryButtonClass}>
           Cancel
         </Link>
       </div>
-    </form>
+    </ActionForm>
   );
 }

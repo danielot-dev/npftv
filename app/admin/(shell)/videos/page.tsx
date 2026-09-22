@@ -5,8 +5,13 @@ import StatusBadge from "@/components/admin/StatusBadge";
 import DeleteButton from "@/components/admin/DeleteButton";
 import { primaryButtonClass } from "@/components/admin/formStyles";
 import { formatDate } from "@/lib/format";
+import SuccessBanner from "@/components/admin/SuccessBanner";
 
-export default async function AdminVideosListPage() {
+export default async function AdminVideosListPage({
+  searchParams,
+}: {
+  searchParams: { success?: string };
+}) {
   const videos = await prisma.video.findMany({
     orderBy: { createdAt: "desc" },
     include: { program: { select: { name: true } } },
@@ -14,6 +19,7 @@ export default async function AdminVideosListPage() {
 
   return (
     <div>
+      <SuccessBanner message={searchParams.success} />
       <div className="mb-6 flex items-center justify-between">
         <h1 className="font-heading text-2xl font-bold text-navy">Videos</h1>
         <Link href="/admin/videos/new" className={primaryButtonClass}>

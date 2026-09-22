@@ -5,8 +5,15 @@ import GalleryAlbumForm from "@/components/admin/GalleryAlbumForm";
 import AddImageForm from "@/components/admin/AddImageForm";
 import DeleteButton from "@/components/admin/DeleteButton";
 import { updateAlbum, addImageToAlbum, deleteImage } from "@/lib/actions/galleryActions";
+import SuccessBanner from "@/components/admin/SuccessBanner";
 
-export default async function EditAlbumPage({ params }: { params: { id: string } }) {
+export default async function EditAlbumPage({
+  params,
+  searchParams,
+}: {
+  params: { id: string };
+  searchParams: { success?: string };
+}) {
   const album = await prisma.galleryAlbum.findUnique({
     where: { id: params.id },
     include: { images: { orderBy: { order: "asc" } } },
@@ -14,7 +21,9 @@ export default async function EditAlbumPage({ params }: { params: { id: string }
   if (!album) notFound();
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2">
+    <div>
+      <SuccessBanner message={searchParams.success} />
+      <div className="grid gap-8 lg:grid-cols-2">
       <div>
         <h1 className="mb-6 font-heading text-2xl font-bold text-navy">Edit Album</h1>
         <GalleryAlbumForm action={updateAlbum.bind(null, album.id)} defaultValues={album} />
@@ -54,6 +63,7 @@ export default async function EditAlbumPage({ params }: { params: { id: string }
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ImageUploadField from "@/components/admin/ImageUploadField";
+import ActionForm, { SubmitButton, type ActionState } from "@/components/admin/ActionForm";
 import { inputClass, labelClass, selectClass, textareaClass, primaryButtonClass, secondaryButtonClass } from "@/components/admin/formStyles";
 
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -17,11 +18,11 @@ export default function ProgramForm({
   action,
   defaultValues,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   defaultValues?: ProgramFormValues;
 }) {
   return (
-    <form action={action} className="max-w-2xl space-y-5">
+    <ActionForm action={action} className="max-w-2xl space-y-5">
       <div>
         <label className={labelClass} htmlFor="name">Program Name</label>
         <input id="name" name="name" required defaultValue={defaultValues?.name} className={inputClass} />
@@ -76,13 +77,11 @@ export default function ProgramForm({
       </label>
 
       <div className="flex gap-3 pt-2">
-        <button type="submit" className={primaryButtonClass}>
-          Save Program
-        </button>
+        <SubmitButton label="Save Program" className={primaryButtonClass} />
         <Link href="/admin/programs" className={secondaryButtonClass}>
           Cancel
         </Link>
       </div>
-    </form>
+    </ActionForm>
   );
 }

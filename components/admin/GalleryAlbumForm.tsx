@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ImageUploadField from "@/components/admin/ImageUploadField";
+import ActionForm, { SubmitButton, type ActionState } from "@/components/admin/ActionForm";
 import {
   inputClass,
   labelClass,
@@ -28,13 +29,13 @@ export default function GalleryAlbumForm({
   submitLabel = "Save Album",
   cancelHref = "/admin/gallery",
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   defaultValues?: AlbumFormValues;
   submitLabel?: string;
   cancelHref?: string;
 }) {
   return (
-    <form action={action} className="max-w-2xl space-y-5">
+    <ActionForm action={action} className="max-w-2xl space-y-5">
       <div>
         <label className={labelClass} htmlFor="title">
           Album Title
@@ -87,13 +88,11 @@ export default function GalleryAlbumForm({
       />
 
       <div className="flex gap-3 pt-2">
-        <button type="submit" className={primaryButtonClass}>
-          {submitLabel}
-        </button>
+        <SubmitButton label={submitLabel} className={primaryButtonClass} />
         <Link href={cancelHref} className={secondaryButtonClass}>
           Cancel
         </Link>
       </div>
-    </form>
+    </ActionForm>
   );
 }

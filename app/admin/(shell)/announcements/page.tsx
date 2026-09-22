@@ -5,14 +5,20 @@ import StatusBadge from "@/components/admin/StatusBadge";
 import DeleteButton from "@/components/admin/DeleteButton";
 import { primaryButtonClass } from "@/components/admin/formStyles";
 import { formatDate } from "@/lib/format";
+import SuccessBanner from "@/components/admin/SuccessBanner";
 
-export default async function AdminAnnouncementsListPage() {
+export default async function AdminAnnouncementsListPage({
+  searchParams,
+}: {
+  searchParams: { success?: string };
+}) {
   const announcements = await prisma.announcement.findMany({
     orderBy: [{ priority: "desc" }, { createdAt: "desc" }],
   });
 
   return (
     <div>
+      <SuccessBanner message={searchParams.success} />
       <div className="mb-6 flex items-center justify-between">
         <h1 className="font-heading text-2xl font-bold text-navy">Announcements</h1>
         <Link href="/admin/announcements/new" className={primaryButtonClass}>

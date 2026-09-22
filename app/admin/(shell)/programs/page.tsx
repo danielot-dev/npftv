@@ -3,12 +3,18 @@ import { prisma } from "@/lib/prisma";
 import { deleteProgram } from "@/lib/actions/programActions";
 import DeleteButton from "@/components/admin/DeleteButton";
 import { primaryButtonClass } from "@/components/admin/formStyles";
+import SuccessBanner from "@/components/admin/SuccessBanner";
 
-export default async function AdminProgramsListPage() {
+export default async function AdminProgramsListPage({
+  searchParams,
+}: {
+  searchParams: { success?: string };
+}) {
   const programs = await prisma.program.findMany({ orderBy: { name: "asc" } });
 
   return (
     <div>
+      <SuccessBanner message={searchParams.success} />
       <div className="mb-6 flex items-center justify-between">
         <h1 className="font-heading text-2xl font-bold text-navy">Programs</h1>
         <Link href="/admin/programs/new" className={primaryButtonClass}>

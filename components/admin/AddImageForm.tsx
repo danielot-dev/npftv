@@ -1,13 +1,17 @@
 import ImageUploadField from "@/components/admin/ImageUploadField";
 import { inputClass, labelClass, primaryButtonClass } from "@/components/admin/formStyles";
+import ActionForm, { SubmitButton, type ActionState } from "@/components/admin/ActionForm";
 
 export default function AddImageForm({
   action,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
 }) {
   return (
-    <form action={action} className="space-y-4 rounded-lg border border-dashed border-navy/20 bg-white p-4">
+    <ActionForm
+      action={action}
+      className="space-y-4 rounded-lg border border-dashed border-navy/20 bg-white p-4"
+    >
       <ImageUploadField name="url" label="Add a Photo" />
       <div>
         <label className={labelClass} htmlFor="caption">
@@ -15,9 +19,7 @@ export default function AddImageForm({
         </label>
         <input id="caption" name="caption" className={inputClass} />
       </div>
-      <button type="submit" className={primaryButtonClass}>
-        Add to Album
-      </button>
-    </form>
+      <SubmitButton label="Add to Album" pendingLabel="Adding…" className={primaryButtonClass} />
+    </ActionForm>
   );
 }

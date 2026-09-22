@@ -1,9 +1,13 @@
 import { inputClass, labelClass, selectClass, primaryButtonClass } from "@/components/admin/formStyles";
 import { createStaffUser } from "@/lib/actions/userActions";
+import ActionForm, { SubmitButton } from "@/components/admin/ActionForm";
 
 export default function CreateStaffForm() {
   return (
-    <form action={createStaffUser} className="grid gap-4 rounded-lg border border-navy/10 bg-white p-6 sm:grid-cols-2">
+    <ActionForm
+      action={createStaffUser}
+      className="grid gap-4 rounded-lg border border-navy/10 bg-white p-6 sm:grid-cols-2"
+    >
       <div>
         <label className={labelClass} htmlFor="name">
           Full Name
@@ -21,6 +25,7 @@ export default function CreateStaffForm() {
           Temporary Password
         </label>
         <input id="password" name="password" type="password" required minLength={8} className={inputClass} />
+        <p className="mt-1 text-xs text-navy-dark/50">At least 8 characters.</p>
       </div>
       <div>
         <label className={labelClass} htmlFor="role">
@@ -32,10 +37,8 @@ export default function CreateStaffForm() {
         </select>
       </div>
       <div className="sm:col-span-2">
-        <button type="submit" className={primaryButtonClass}>
-          Create Staff Account
-        </button>
+        <SubmitButton label="Create Staff Account" pendingLabel="Creating…" className={primaryButtonClass} />
       </div>
-    </form>
+    </ActionForm>
   );
 }

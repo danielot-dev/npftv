@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { inputClass, labelClass, selectClass, textareaClass, primaryButtonClass, secondaryButtonClass } from "@/components/admin/formStyles";
+import ActionForm, { SubmitButton, type ActionState } from "@/components/admin/ActionForm";
 
 type PressFormValues = {
   title: string;
@@ -13,11 +14,11 @@ export default function PressReleaseForm({
   action,
   defaultValues,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   defaultValues?: PressFormValues;
 }) {
   return (
-    <form action={action} className="max-w-2xl space-y-5">
+    <ActionForm action={action} className="max-w-2xl space-y-5">
       <div>
         <label className={labelClass} htmlFor="title">Title</label>
         <input id="title" name="title" required defaultValue={defaultValues?.title} className={inputClass} />
@@ -62,13 +63,11 @@ export default function PressReleaseForm({
       </div>
 
       <div className="flex gap-3 pt-2">
-        <button type="submit" className={primaryButtonClass}>
-          Save Release
-        </button>
+        <SubmitButton label="Save Release" className={primaryButtonClass} />
         <Link href="/admin/press-releases" className={secondaryButtonClass}>
           Cancel
         </Link>
       </div>
-    </form>
+    </ActionForm>
   );
 }

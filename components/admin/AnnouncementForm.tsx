@@ -7,6 +7,7 @@ import {
   primaryButtonClass,
   secondaryButtonClass,
 } from "@/components/admin/formStyles";
+import ActionForm, { SubmitButton, type ActionState } from "@/components/admin/ActionForm";
 
 type AnnouncementFormValues = {
   title: string;
@@ -27,11 +28,11 @@ export default function AnnouncementForm({
   action,
   defaultValues,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   defaultValues?: AnnouncementFormValues;
 }) {
   return (
-    <form action={action} className="max-w-2xl space-y-5">
+    <ActionForm action={action} className="max-w-2xl space-y-5">
       <div>
         <label className={labelClass} htmlFor="title">
           Announcement
@@ -100,13 +101,11 @@ export default function AnnouncementForm({
       </div>
 
       <div className="flex gap-3 pt-2">
-        <button type="submit" className={primaryButtonClass}>
-          Save Announcement
-        </button>
+        <SubmitButton label="Save Announcement" className={primaryButtonClass} />
         <Link href="/admin/announcements" className={secondaryButtonClass}>
           Cancel
         </Link>
       </div>
-    </form>
+    </ActionForm>
   );
 }
