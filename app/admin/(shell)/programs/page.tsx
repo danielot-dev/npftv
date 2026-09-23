@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { deleteProgram } from "@/lib/actions/programActions";
 import DeleteButton from "@/components/admin/DeleteButton";
@@ -10,6 +12,8 @@ export default async function AdminProgramsListPage({
 }: {
   searchParams: { success?: string };
 }) {
+  const session = await getServerSession(authOptions);
+  const isAdmin = session?.user?.role === "ADMIN";
   const programs = await prisma.program.findMany({ orderBy: { name: "asc" } });
 
   return (
@@ -54,10 +58,12 @@ export default async function AdminProgramsListPage({
                       >
                         Edit
                       </Link>
-                      <DeleteButton
-                        action={deleteProgram.bind(null, program.id)}
-                        confirmMessage="Delete this program? Videos linked to it will keep the video itself but lose the program link."
-                      />
+                      {isAdmin && (
+                        <DeleteButton
+                          action={deleteProgram.bind(null, program.id)}
+                          confirmMessage="Delete this program? Videos linked to it will keep the video itself but lose the program link."
+                        />
+                      )}
                     </div>
                   </td>
                 </tr>

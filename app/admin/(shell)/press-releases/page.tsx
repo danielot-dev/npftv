@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { deletePressRelease } from "@/lib/actions/pressActions";
 import StatusBadge from "@/components/admin/StatusBadge";
@@ -12,6 +14,8 @@ export default async function AdminPressListPage({
 }: {
   searchParams: { success?: string };
 }) {
+  const session = await getServerSession(authOptions);
+  const isAdmin = session?.user?.role === "ADMIN";
   const releases = await prisma.pressRelease.findMany({ orderBy: { createdAt: "desc" } });
 
   return (
@@ -58,7 +62,7 @@ export default async function AdminPressListPage({
                       >
                         Edit
                       </Link>
-                      <DeleteButton action={deletePressRelease.bind(null, release.id)} />
+                      {isAdmin && <DeleteButton action={deletePressRelease.bind(null, release.id)} />}
                     </div>
                   </td>
                 </tr>

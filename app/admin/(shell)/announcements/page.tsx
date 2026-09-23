@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { deleteAnnouncement } from "@/lib/actions/announcementActions";
 import StatusBadge from "@/components/admin/StatusBadge";
@@ -12,6 +14,8 @@ export default async function AdminAnnouncementsListPage({
 }: {
   searchParams: { success?: string };
 }) {
+  const session = await getServerSession(authOptions);
+  const isAdmin = session?.user?.role === "ADMIN";
   const announcements = await prisma.announcement.findMany({
     orderBy: [{ priority: "desc" }, { createdAt: "desc" }],
   });
@@ -62,7 +66,7 @@ export default async function AdminAnnouncementsListPage({
                       >
                         Edit
                       </Link>
-                      <DeleteButton action={deleteAnnouncement.bind(null, item.id)} />
+                      {isAdmin && <DeleteButton action={deleteAnnouncement.bind(null, item.id)} />}
                     </div>
                   </td>
                 </tr>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { deleteAlbum } from "@/lib/actions/galleryActions";
 import StatusBadge from "@/components/admin/StatusBadge";
@@ -12,6 +14,8 @@ export default async function AdminGalleryListPage({
 }: {
   searchParams: { success?: string };
 }) {
+  const session = await getServerSession(authOptions);
+  const isAdmin = session?.user?.role === "ADMIN";
   const albums = await prisma.galleryAlbum.findMany({
     orderBy: { createdAt: "desc" },
     include: { _count: { select: { images: true } } },
@@ -63,10 +67,12 @@ export default async function AdminGalleryListPage({
                       >
                         Manage
                       </Link>
-                      <DeleteButton
-                        action={deleteAlbum.bind(null, album.id)}
-                        confirmMessage="Delete this album and all its photos? This can't be undone."
-                      />
+                      {isAdmin && (
+                        <DeleteButton
+                          action={deleteAlbum.bind(null, album.id)}
+                          confirmMessage="Delete this album and all its photos? This can't be undone."
+                        />
+                      )}
                     </div>
                   </td>
                 </tr>
