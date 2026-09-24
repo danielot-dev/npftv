@@ -21,7 +21,7 @@ export default function ProgramCard({ program }: { program: ProgramCardItem }) {
         {program.coverImage ? (
           <Image src={program.coverImage} alt={program.name} fill className="object-cover" />
         ) : (
-          <MediaPlaceholder className="h-full w-full" variant="gold" />
+          <MediaPlaceholder className="h-full w-full" variant="royal" />
         )}
       </div>
       <div className="min-w-0 flex-1">
@@ -33,7 +33,7 @@ export default function ProgramCard({ program }: { program: ProgramCardItem }) {
       {(program.dayOfWeek || program.time) && (
         <div className="shrink-0 border-l border-navy/10 pl-5 text-right">
           <p className="font-condensed text-lg font-semibold text-navy">{program.dayOfWeek}</p>
-          <p className="font-condensed text-sm text-gold-dark">{program.time}</p>
+          <p className="font-condensed text-sm text-royal-dark">{program.time}</p>
         </div>
       )}
     </Link>

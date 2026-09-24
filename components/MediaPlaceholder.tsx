@@ -3,10 +3,10 @@ export default function MediaPlaceholder({
   variant = "navy",
 }: {
   className?: string;
-  variant?: "navy" | "gold";
+  variant?: "navy" | "royal";
 }) {
-  const bg = variant === "navy" ? "#0F2A4A" : "#C9A227";
-  const line = variant === "navy" ? "#1C3F66" : "#E0C158";
+  const bg = variant === "navy" ? "#0F2A4A" : "#2E6FF2";
+  const line = variant === "navy" ? "#1C3F66" : "#6C97FF";
 
   return (
     <div className={`relative overflow-hidden ${className}`} style={{ backgroundColor: bg }}>
@@ -30,8 +30,8 @@ export default function MediaPlaceholder({
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <circle cx="18" cy="18" r="16" stroke="#C9A227" strokeWidth="1.5" />
-          <circle cx="18" cy="18" r="4" fill="#C9A227" />
+          <circle cx="18" cy="18" r="16" stroke="#2E6FF2" strokeWidth="1.5" />
+          <circle cx="18" cy="18" r="4" fill="#2E6FF2" />
         </svg>
       </div>
     </div>

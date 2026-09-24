@@ -45,7 +45,7 @@ export default function ImageUploadField({
 
   return (
     <div>
-      <label className="block text-xs font-medium uppercase tracking-wide text-gold-dark">
+      <label className="block text-xs font-medium uppercase tracking-wide text-royal-dark">
         {label}
       </label>
 
@@ -66,7 +66,7 @@ export default function ImageUploadField({
       />
 
       {uploading && <p className="mt-1 text-xs text-navy-dark/60">Uploading…</p>}
-      {error && <p className="mt-1 text-xs text-crimson">{error}</p>}
+      {error && <p className="mt-1 text-xs text-signal">{error}</p>}
       {!url && !uploading && (
         <p className="mt-1 text-xs text-navy-dark/50">Optional — you can paste a URL directly too by editing this later.</p>
       )}

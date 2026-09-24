@@ -8,9 +8,9 @@ export default async function BreakingTicker() {
   const items = [...announcements, ...announcements]; // duplicate for seamless loop
 
   return (
-    <div className="overflow-hidden border-b border-gold/40 bg-navy">
+    <div className="overflow-hidden border-b border-royal/40 bg-navy">
       <div className="mx-auto flex max-w-7xl items-stretch">
-        <div className="flex shrink-0 items-center gap-2 bg-crimson px-4 py-2">
+        <div className="flex shrink-0 items-center gap-2 bg-signal px-4 py-2">
           <span className="h-1.5 w-1.5 rounded-full bg-white motion-safe:animate-pulse" />
           <span className="font-condensed text-sm font-semibold uppercase tracking-wide text-white">
             Notice

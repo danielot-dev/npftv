@@ -47,7 +47,7 @@ export default async function AdminNewsListPage({
                   <td className="px-4 py-3 font-medium text-navy">
                     {article.title}
                     {article.featured && (
-                      <span className="ml-2 rounded bg-gold/20 px-1.5 py-0.5 font-condensed text-xs font-semibold text-gold-dark">
+                      <span className="ml-2 rounded bg-royal/20 px-1.5 py-0.5 font-condensed text-xs font-semibold text-royal-dark">
                         Featured
                       </span>
                     )}
@@ -63,7 +63,7 @@ export default async function AdminNewsListPage({
                     <div className="flex items-center justify-end gap-3">
                       <Link
                         href={`/admin/news/${article.id}`}
-                        className="text-sm font-semibold text-navy hover:text-gold-dark"
+                        className="text-sm font-semibold text-navy hover:text-royal-dark"
                       >
                         Edit
                       </Link>

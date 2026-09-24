@@ -12,9 +12,9 @@ export default async function AdminMessagesPage() {
   return (
     <div>
       <div className="mb-6 flex items-center gap-3">
-        <h1 className="font-heading text-2xl font-bold text-navy">General Inquiries</h1>
+        <h1 className="font-heading text-2xl font-bold text-navy">Messages</h1>
         {unreadCount > 0 && (
-          <span className="rounded-full bg-crimson px-2.5 py-0.5 font-condensed text-xs font-semibold text-white">
+          <span className="rounded-full bg-signal px-2.5 py-0.5 font-condensed text-xs font-semibold text-white">
             {unreadCount} unread
           </span>
         )}
@@ -22,7 +22,7 @@ export default async function AdminMessagesPage() {
 
       {messages.length === 0 ? (
         <p className="rounded-lg border border-dashed border-navy/20 bg-white px-6 py-16 text-center text-sm text-navy-dark/60">
-          No inquiries submitted yet. These come from the Contact page form.
+          No messages yet. These come from the Contact page and the Report page forms.
         </p>
       ) : (
         <div className="space-y-4">
@@ -30,16 +30,31 @@ export default async function AdminMessagesPage() {
             <div
               key={msg.id}
               className={`rounded-lg border bg-white p-5 ${
-                msg.read ? "border-navy/10" : "border-gold/60 shadow-gold"
+                msg.read ? "border-navy/10" : "border-royal/60 shadow-royal"
               }`}
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="font-heading text-base font-semibold text-navy">{msg.subject}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="font-heading text-base font-semibold text-navy">{msg.subject}</p>
+                    {msg.category === "Crime Report" && (
+                      <span className="rounded-full bg-navy px-2 py-0.5 font-condensed text-xs font-semibold text-white">
+                        Crime Report
+                      </span>
+                    )}
+                    {msg.anonymous && (
+                      <span className="rounded-full border border-navy/20 px-2 py-0.5 font-condensed text-xs font-semibold text-navy-dark/70">
+                        Anonymous
+                      </span>
+                    )}
+                  </div>
                   <p className="mt-1 text-sm text-navy-dark/70">
                     {msg.name} &lt;{msg.email}&gt;
                     {msg.phone && <span className="ml-2">{msg.phone}</span>}
                   </p>
+                  {msg.location && (
+                    <p className="mt-1 text-sm text-navy-dark/70">Location: {msg.location}</p>
+                  )}
                   <p className="mt-1 font-condensed text-xs text-navy-dark/50">
                     {formatDate(msg.createdAt)}
                   </p>
@@ -47,7 +62,7 @@ export default async function AdminMessagesPage() {
                 <div className="flex items-center gap-3">
                   {!msg.read && (
                     <form action={markMessageRead.bind(null, msg.id)}>
-                      <button type="submit" className="text-sm font-semibold text-navy hover:text-gold-dark">
+                      <button type="submit" className="text-sm font-semibold text-navy hover:text-royal-dark">
                         Mark as read
                       </button>
                     </form>

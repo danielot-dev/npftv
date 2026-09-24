@@ -61,7 +61,7 @@ export default async function AdminVideosListPage({
                     <div className="flex items-center justify-end gap-3">
                       <Link
                         href={`/admin/videos/${video.id}`}
-                        className="text-sm font-semibold text-navy hover:text-gold-dark"
+                        className="text-sm font-semibold text-navy hover:text-royal-dark"
                       >
                         Edit
                       </Link>

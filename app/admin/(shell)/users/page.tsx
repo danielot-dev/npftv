@@ -38,7 +38,7 @@ export default async function AdminUsersPage() {
                 <td className="px-4 py-3 font-medium text-navy">
                   {user.name}
                   {user.id === session.user.id && (
-                    <span className="ml-2 rounded bg-gold/20 px-1.5 py-0.5 font-condensed text-xs font-semibold text-gold-dark">
+                    <span className="ml-2 rounded bg-royal/20 px-1.5 py-0.5 font-condensed text-xs font-semibold text-royal-dark">
                       You
                     </span>
                   )}

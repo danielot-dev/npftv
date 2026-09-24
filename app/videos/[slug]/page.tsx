@@ -54,12 +54,12 @@ export default async function VideoDetailPage({ params }: { params: { slug: stri
         </div>
 
         <div className="mt-6">
-          <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-gold-dark">
+          <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-royal-dark">
             {video.category}
             {video.program && (
               <>
                 {" from "}
-                <Link href={`/programs/${video.program.slug}`} className="hover:text-gold">
+                <Link href={`/programs/${video.program.slug}`} className="hover:text-royal">
                   {video.program.name}
                 </Link>
               </>

@@ -74,7 +74,7 @@ export default async function SocialIcons({ className = "" }: { className?: stri
           rel="noopener noreferrer"
           aria-label={platform.label}
           title={platform.label}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-navy/20 text-navy transition hover:border-gold hover:bg-gold hover:text-white"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-navy/20 text-navy transition hover:border-royal hover:bg-royal hover:text-white"
         >
           {platform.icon}
         </a>

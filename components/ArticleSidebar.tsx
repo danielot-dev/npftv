@@ -50,7 +50,7 @@ export default async function ArticleSidebar({ excludeId }: { excludeId?: string
               <li key={c.category}>
                 <Link
                   href={`/news?category=${encodeURIComponent(c.category)}`}
-                  className="flex items-center justify-between text-sm text-navy-dark hover:text-gold-dark"
+                  className="flex items-center justify-between text-sm text-navy-dark hover:text-royal-dark"
                 >
                   <span>{c.category}</span>
                   <span className="font-condensed text-xs text-navy-dark/40">{c.count}</span>

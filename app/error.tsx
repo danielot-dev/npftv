@@ -16,14 +16,14 @@ export default function ErrorPage({
 
   return (
     <div className="flex min-h-screen flex-col bg-offwhite">
-      <header className="border-b border-gold/40 bg-white px-4 py-3 lg:px-8">
+      <header className="border-b border-royal/40 bg-white px-4 py-3 lg:px-8">
         <Link href="/" className="font-heading text-lg font-bold text-navy">
-          NPF <span className="text-gold-dark">TV</span>
+          NPF <span className="text-royal-dark">TV</span>
         </Link>
       </header>
 
       <main className="mx-auto flex flex-1 max-w-2xl flex-col items-center justify-center px-4 text-center">
-        <p className="font-condensed text-sm font-semibold uppercase tracking-wide text-crimson">
+        <p className="font-condensed text-sm font-semibold uppercase tracking-wide text-signal">
           Something went wrong
         </p>
         <h1 className="mt-2 font-heading text-2xl font-extrabold text-navy lg:text-3xl">

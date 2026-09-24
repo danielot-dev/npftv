@@ -37,7 +37,7 @@ export default async function ProgramDetailPage({ params }: { params: { slug: st
           <h1 className="font-heading text-3xl font-extrabold text-navy">{program.name}</h1>
           <p className="mt-2 max-w-2xl text-navy-dark/75">{program.description}</p>
           {(program.dayOfWeek || program.time) && (
-            <p className="mt-3 font-condensed text-lg font-semibold text-gold-dark">
+            <p className="mt-3 font-condensed text-lg font-semibold text-royal-dark">
               Airs {program.dayOfWeek} {program.time}
             </p>
           )}

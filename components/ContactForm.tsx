@@ -48,14 +48,14 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-gold/50 bg-white px-6 py-8 text-center">
+      <div className="border border-royal/50 bg-white px-6 py-8 text-center">
         <h3 className="font-heading text-lg font-bold text-navy">Message sent</h3>
         <p className="mt-2 text-sm text-navy-dark/75">
           Thank you for reaching out. Your message has been received and will be reviewed by our team.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-4 text-sm font-semibold text-gold-dark hover:text-gold"
+          className="mt-4 text-sm font-semibold text-royal-dark hover:text-royal"
         >
           Send another message
         </button>
@@ -75,7 +75,7 @@ export default function ContactForm() {
             name="name"
             type="text"
             required
-            className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-gold"
+            className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
           />
         </div>
         <div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
-            className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-gold"
+            className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
           />
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
-          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-gold"
+          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
         />
       </div>
 
@@ -113,7 +113,7 @@ export default function ContactForm() {
           name="subject"
           type="text"
           required
-          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-gold"
+          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
         />
       </div>
 
@@ -126,12 +126,12 @@ export default function ContactForm() {
           name="message"
           rows={5}
           required
-          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-gold"
+          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
         />
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-crimson" role="alert">
+        <p className="text-sm text-signal" role="alert">
           {errorMessage}
         </p>
       )}

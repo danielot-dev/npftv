@@ -27,12 +27,12 @@ export default async function AdminDashboardPage() {
 
       <a
         href="/admin/live"
-        className={`mb-6 flex items-center justify-between rounded-lg border px-5 py-4 transition hover:border-gold ${
-          stream?.isLive ? "border-crimson bg-crimson/5" : "border-navy/20 bg-white"
+        className={`mb-6 flex items-center justify-between rounded-lg border px-5 py-4 transition hover:border-royal ${
+          stream?.isLive ? "border-signal bg-signal/5" : "border-navy/20 bg-white"
         }`}
       >
         <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-gold-dark">
+          <p className="text-xs font-medium uppercase tracking-wide text-royal-dark">
             Live TV Status
           </p>
           <p className="mt-1 font-heading text-lg font-bold text-navy">
@@ -47,9 +47,9 @@ export default async function AdminDashboardPage() {
           <a
             key={card.label}
             href={card.href}
-            className="rounded-lg border border-gold/40 bg-white p-6 transition hover:border-gold"
+            className="rounded-lg border border-royal/40 bg-white p-6 transition hover:border-royal"
           >
-            <p className="text-xs font-medium uppercase tracking-wide text-gold-dark">
+            <p className="text-xs font-medium uppercase tracking-wide text-royal-dark">
               {card.label}
             </p>
             <p className="mt-2 font-heading text-3xl font-bold text-navy">{card.count}</p>

@@ -21,7 +21,7 @@ export default function SearchBar({ initialQuery = "" }: { initialQuery?: string
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search news, videos, programs…"
-        className="w-full border border-navy/20 bg-white px-4 py-2.5 text-navy-dark outline-none focus:border-gold"
+        className="w-full border border-navy/20 bg-white px-4 py-2.5 text-navy-dark outline-none focus:border-royal"
       />
       <button
         type="submit"

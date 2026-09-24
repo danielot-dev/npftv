@@ -53,11 +53,11 @@ export function CompactNewsCard({ article }: { article: NewsCardArticle }) {
         {article.coverImage ? (
           <Image src={article.coverImage} alt={article.title} fill className="object-cover" />
         ) : (
-          <MediaPlaceholder className="h-full w-full" variant="gold" />
+          <MediaPlaceholder className="h-full w-full" variant="royal" />
         )}
       </div>
       <div className="min-w-0">
-        <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-gold-dark">
+        <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-royal-dark">
           {article.category}
         </p>
         <h3 className="mt-1 font-heading text-base font-semibold leading-snug text-navy group-hover:text-navy-light">

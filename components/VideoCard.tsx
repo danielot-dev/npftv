@@ -36,7 +36,7 @@ export default function VideoCard({ video }: { video: VideoCardItem }) {
           </div>
         </div>
       </div>
-      <p className="mt-3 font-condensed text-xs font-semibold uppercase tracking-wide text-gold-dark">
+      <p className="mt-3 font-condensed text-xs font-semibold uppercase tracking-wide text-royal-dark">
         {video.category}
       </p>
       <h3 className="mt-1 font-heading text-base font-semibold leading-snug text-navy group-hover:text-navy-light">

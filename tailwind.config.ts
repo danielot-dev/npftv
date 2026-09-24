@@ -18,14 +18,14 @@ const config: Config = {
           DEFAULT: "#0A0A0A",
           soft: "#111318",
         },
-        gold: {
-          DEFAULT: "#C9A227",
-          light: "#E0C158",
-          dark: "#9C7D1C",
+        royal: {
+          DEFAULT: "#2E6FF2",
+          light: "#6C97FF",
+          dark: "#1B4FC4",
         },
-        crimson: {
-          DEFAULT: "#B3242A",
-          dark: "#8C1B20",
+        signal: {
+          DEFAULT: "#0EA5E9",
+          dark: "#0369A1",
         },
         offwhite: "#F4F5F7",
         bodylight: "#D9DCE1",
@@ -39,7 +39,7 @@ const config: Config = {
         "navy-gradient": "linear-gradient(180deg, #1C3F66 0%, #0F2A4A 55%, #091A30 100%)",
       },
       boxShadow: {
-        gold: "0 0 0 1px rgba(201,162,39,0.4)",
+        royal: "0 0 0 1px rgba(46,111,242,0.4)",
       },
     },
   },

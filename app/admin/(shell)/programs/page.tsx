@@ -54,7 +54,7 @@ export default async function AdminProgramsListPage({
                     <div className="flex items-center justify-end gap-3">
                       <Link
                         href={`/admin/programs/${program.id}`}
-                        className="text-sm font-semibold text-navy hover:text-gold-dark"
+                        className="text-sm font-semibold text-navy hover:text-royal-dark"
                       >
                         Edit
                       </Link>

@@ -63,7 +63,7 @@ export default async function AdminGalleryListPage({
                     <div className="flex items-center justify-end gap-3">
                       <Link
                         href={`/admin/gallery/${album.id}`}
-                        className="text-sm font-semibold text-navy hover:text-gold-dark"
+                        className="text-sm font-semibold text-navy hover:text-royal-dark"
                       >
                         Manage
                       </Link>

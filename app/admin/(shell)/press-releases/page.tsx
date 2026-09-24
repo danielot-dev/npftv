@@ -58,7 +58,7 @@ export default async function AdminPressListPage({
                     <div className="flex items-center justify-end gap-3">
                       <Link
                         href={`/admin/press-releases/${release.id}`}
-                        className="text-sm font-semibold text-navy hover:text-gold-dark"
+                        className="text-sm font-semibold text-navy hover:text-royal-dark"
                       >
                         Edit
                       </Link>

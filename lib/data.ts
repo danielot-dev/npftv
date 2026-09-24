@@ -142,6 +142,15 @@ export async function getActiveAnnouncements() {
   });
 }
 
+// ---- Partners ----
+
+export async function getActivePartners() {
+  return prisma.partner.findMany({
+    where: { active: true },
+    orderBy: [{ order: "asc" }, { name: "asc" }],
+  });
+}
+
 // ---- Site settings ----
 
 export async function getSiteSettings() {

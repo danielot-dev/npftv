@@ -31,7 +31,7 @@ export default async function UnsubscribePage({
             <p className="mt-3 text-sm text-navy-dark/70">{result.error}</p>
           </>
         )}
-        <Link href="/" className="mt-6 font-heading text-sm font-semibold text-gold-dark hover:text-gold">
+        <Link href="/" className="mt-6 font-heading text-sm font-semibold text-royal-dark hover:text-royal">
           Back to Homepage
         </Link>
       </main>

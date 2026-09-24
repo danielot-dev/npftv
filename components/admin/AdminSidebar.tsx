@@ -11,6 +11,7 @@ const NAV_SECTIONS: { label: string; href: string }[] = [
   { label: "Gallery", href: "/admin/gallery" },
   { label: "Press Releases", href: "/admin/press-releases" },
   { label: "Announcements", href: "/admin/announcements" },
+  { label: "Partners", href: "/admin/partners" },
   { label: "Live TV", href: "/admin/live" },
   { label: "Messages", href: "/admin/messages" },
   { label: "Subscribers", href: "/admin/subscribers" },

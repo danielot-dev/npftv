@@ -74,7 +74,7 @@ export default async function SearchPage({
                 <div className="space-y-4">
                   {results.videos.map((item) => (
                     <Link key={item.id} href={`/videos/${item.slug}`} className="group block">
-                      <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-gold-dark">
+                      <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-royal-dark">
                         {item.category}
                       </p>
                       <h3 className="mt-1 font-heading text-lg font-semibold text-navy group-hover:text-navy-light">

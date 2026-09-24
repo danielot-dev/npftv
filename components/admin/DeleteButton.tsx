@@ -18,7 +18,7 @@ export default function DeleteButton({
         }
       }}
     >
-      <button type="submit" className="text-sm font-semibold text-crimson hover:underline">
+      <button type="submit" className="text-sm font-semibold text-signal hover:underline">
         {label}
       </button>
     </form>

@@ -47,7 +47,7 @@ export default function ShareButtons({ path, title }: { path: string; title: str
           target="_blank"
           rel="noopener noreferrer"
           aria-label={link.label}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-navy/20 text-navy transition hover:border-gold hover:bg-gold hover:text-white"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-navy/20 text-navy transition hover:border-royal hover:bg-royal hover:text-white"
         >
           {link.icon}
         </a>

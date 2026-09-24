@@ -37,7 +37,7 @@ export default function MobileMenu() {
       </button>
 
       {open && (
-        <nav className="absolute inset-x-0 top-full border-b border-gold/40 bg-white shadow-lg">
+        <nav className="absolute inset-x-0 top-full border-b border-royal/40 bg-white shadow-lg">
           <ul className="mx-auto max-w-7xl divide-y divide-navy/10 px-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>

@@ -22,7 +22,7 @@ export default function PressReleaseRow({ release }: { release: PressReleaseItem
       </Link>
       <p className="mt-2 text-sm text-navy-dark/75">{release.summary}</p>
       <div className="mt-3 flex gap-4">
-        <Link href={`/press-centre/${release.slug}`} className="text-sm font-semibold text-gold-dark hover:text-gold">
+        <Link href={`/press-centre/${release.slug}`} className="text-sm font-semibold text-royal-dark hover:text-royal">
           Read statement
         </Link>
         {release.documentUrl && (

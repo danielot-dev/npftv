@@ -20,9 +20,9 @@ export default async function ContactPage() {
 
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <div className="border-l-4 border-crimson bg-white p-6">
+            <div className="border-l-4 border-signal bg-white p-6">
               <h2 className="font-heading text-lg font-bold text-navy">In an emergency</h2>
-              <p className="mt-3 font-condensed text-3xl font-bold text-crimson">
+              <p className="mt-3 font-condensed text-3xl font-bold text-signal">
                 {settings?.emergencyPhone ?? "112"}
               </p>
               <p className="mt-1 text-sm text-navy-dark/70">
@@ -31,7 +31,7 @@ export default async function ContactPage() {
               {settings?.emergencyEmail && (
                 <p className="mt-4 text-sm text-navy-dark/75">
                   Emergency email:{" "}
-                  <a href={`mailto:${settings.emergencyEmail}`} className="text-navy hover:text-gold-dark">
+                  <a href={`mailto:${settings.emergencyEmail}`} className="text-navy hover:text-royal-dark">
                     {settings.emergencyEmail}
                   </a>
                 </p>

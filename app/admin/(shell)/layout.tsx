@@ -15,13 +15,13 @@ export default async function AdminShellLayout({ children }: { children: React.R
 
   return (
     <div className="min-h-screen bg-offwhite">
-      <header className="flex items-center justify-between border-b border-gold/40 bg-white px-6 py-3">
+      <header className="flex items-center justify-between border-b border-royal/40 bg-white px-6 py-3">
         <span className="font-heading text-lg font-bold text-navy">
-          NPF <span className="text-gold-dark">TV</span> Admin
+          NPF <span className="text-royal-dark">TV</span> Admin
         </span>
         <div className="flex items-center gap-4">
           <span className="text-sm text-navy-dark/70">
-            {session.user.name} <span className="text-gold-dark">({session.user.role})</span>
+            {session.user.name} <span className="text-royal-dark">({session.user.role})</span>
           </span>
           <SignOutButton />
         </div>

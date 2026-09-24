@@ -36,7 +36,7 @@ export default function SubscribeSection() {
   return (
     <section className="bg-navy py-14">
       <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
-        <p className="font-condensed text-sm font-semibold uppercase tracking-wide text-gold">
+        <p className="font-condensed text-sm font-semibold uppercase tracking-wide text-royal">
           Stay Informed
         </p>
         <h2 className="mt-2 font-heading text-2xl font-extrabold text-white lg:text-3xl">
@@ -47,7 +47,7 @@ export default function SubscribeSection() {
         </p>
 
         {status === "success" ? (
-          <p className="mt-6 rounded-md border border-gold/40 bg-white/5 px-4 py-3 text-sm text-gold-light">
+          <p className="mt-6 rounded-md border border-royal/40 bg-white/5 px-4 py-3 text-sm text-royal-light">
             You&apos;re subscribed. Check your inbox for a confirmation email.
           </p>
         ) : (
@@ -58,12 +58,12 @@ export default function SubscribeSection() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="flex-1 rounded-md border border-white/20 bg-white/10 px-4 py-2.5 text-white placeholder-white/40 outline-none focus:border-gold"
+              className="flex-1 rounded-md border border-white/20 bg-white/10 px-4 py-2.5 text-white placeholder-white/40 outline-none focus:border-royal"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="rounded-md bg-gold px-5 py-2.5 font-heading text-sm font-semibold text-ink transition hover:bg-gold-light disabled:opacity-60"
+              className="rounded-md bg-royal px-5 py-2.5 font-heading text-sm font-semibold text-ink transition hover:bg-royal-light disabled:opacity-60"
             >
               {status === "loading" ? "Subscribing…" : "Subscribe"}
             </button>
@@ -71,7 +71,7 @@ export default function SubscribeSection() {
         )}
 
         {status === "error" && (
-          <p className="mt-3 text-sm text-crimson-dark" role="alert">
+          <p className="mt-3 text-sm text-signal-dark" role="alert">
             {errorMessage}
           </p>
         )}

@@ -45,7 +45,7 @@ export default function ActionForm({
       {state?.error && (
         <div
           role="alert"
-          className="mb-5 rounded-md border border-crimson/40 bg-crimson/5 px-4 py-3 text-sm text-crimson sm:col-span-2"
+          className="mb-5 rounded-md border border-signal/40 bg-signal/5 px-4 py-3 text-sm text-signal sm:col-span-2"
         >
           {state.error}
         </div>

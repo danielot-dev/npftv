@@ -15,7 +15,7 @@ export default async function AdminSettingsPage() {
 
       <form action={updateSiteSettings} className="max-w-xl space-y-6 rounded-lg border border-navy/10 bg-white p-6">
         <div>
-          <h2 className="mb-3 font-heading text-sm font-bold uppercase tracking-wide text-gold-dark">
+          <h2 className="mb-3 font-heading text-sm font-bold uppercase tracking-wide text-royal-dark">
             Emergency Contact
           </h2>
           <div className="grid grid-cols-2 gap-4">
@@ -47,7 +47,7 @@ export default async function AdminSettingsPage() {
         </div>
 
         <div>
-          <h2 className="mb-3 font-heading text-sm font-bold uppercase tracking-wide text-gold-dark">
+          <h2 className="mb-3 font-heading text-sm font-bold uppercase tracking-wide text-royal-dark">
             Social Media Links
           </h2>
           <div className="space-y-4">

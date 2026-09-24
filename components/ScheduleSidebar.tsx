@@ -28,7 +28,7 @@ export default function ScheduleSidebar({ programs }: { programs: ScheduleProgra
 
   return (
     <aside className="border border-navy/10 bg-white">
-      <div className="border-b border-gold/40 bg-navy px-5 py-4">
+      <div className="border-b border-royal/40 bg-navy px-5 py-4">
         <h2 className="font-heading text-sm font-bold uppercase tracking-wide text-white">
           Programme Schedule
         </h2>
@@ -47,7 +47,7 @@ export default function ScheduleSidebar({ programs }: { programs: ScheduleProgra
                 <Link
                   href={`/programs/${program.slug}`}
                   className={`flex items-center justify-between gap-3 px-5 py-4 transition hover:bg-offwhite ${
-                    isToday ? "bg-gold/10" : ""
+                    isToday ? "bg-royal/10" : ""
                   }`}
                 >
                   <div className="min-w-0">
@@ -55,7 +55,7 @@ export default function ScheduleSidebar({ programs }: { programs: ScheduleProgra
                       {program.name}
                     </p>
                     {isToday && (
-                      <p className="mt-0.5 font-condensed text-xs font-semibold uppercase tracking-wide text-crimson">
+                      <p className="mt-0.5 font-condensed text-xs font-semibold uppercase tracking-wide text-signal">
                         Airs today
                       </p>
                     )}
@@ -65,7 +65,7 @@ export default function ScheduleSidebar({ programs }: { programs: ScheduleProgra
                       {program.dayOfWeek ?? "TBA"}
                     </p>
                     {program.time && (
-                      <p className="font-condensed text-xs text-gold-dark">{program.time}</p>
+                      <p className="font-condensed text-xs text-royal-dark">{program.time}</p>
                     )}
                   </div>
                 </Link>
@@ -77,7 +77,7 @@ export default function ScheduleSidebar({ programs }: { programs: ScheduleProgra
 
       <Link
         href="/programs"
-        className="block border-t border-navy/10 px-5 py-3 text-center text-sm font-semibold text-gold-dark hover:text-gold"
+        className="block border-t border-navy/10 px-5 py-3 text-center text-sm font-semibold text-royal-dark hover:text-royal"
       >
         View full programme list
       </Link>

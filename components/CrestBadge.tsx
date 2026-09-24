@@ -1,9 +1,9 @@
 const CATEGORY_STYLES: Record<string, string> = {
   General: "border-navy/30 text-navy",
-  Investigation: "border-crimson/40 text-crimson",
-  Community: "border-gold/50 text-gold-dark",
+  Investigation: "border-signal/40 text-signal",
+  Community: "border-royal/50 text-royal-dark",
   Operations: "border-navy/30 text-navy",
-  Programs: "border-gold/50 text-gold-dark",
+  Programs: "border-royal/50 text-royal-dark",
 };
 
 export default function CrestBadge({ label }: { label: string }) {

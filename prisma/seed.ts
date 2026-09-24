@@ -223,6 +223,42 @@ async function main() {
     },
   });
 
+  await prisma.partner.upsert({
+    where: { id: "seed-partner-1" },
+    update: {},
+    create: {
+      id: "seed-partner-1",
+      name: "Nigeria Security and Civil Defence Corps (NSCDC)",
+      websiteUrl: "https://nscdc.gov.ng",
+      order: 1,
+      active: true,
+    },
+  });
+
+  await prisma.partner.upsert({
+    where: { id: "seed-partner-2" },
+    update: {},
+    create: {
+      id: "seed-partner-2",
+      name: "National Emergency Management Agency (NEMA)",
+      websiteUrl: "https://nema.gov.ng",
+      order: 2,
+      active: true,
+    },
+  });
+
+  await prisma.partner.upsert({
+    where: { id: "seed-partner-3" },
+    update: {},
+    create: {
+      id: "seed-partner-3",
+      name: "Federal Road Safety Corps (FRSC)",
+      websiteUrl: "https://frsc.gov.ng",
+      order: 3,
+      active: true,
+    },
+  });
+
   await prisma.liveStream.upsert({
     where: { id: "singleton-stream" },
     update: {},
@@ -236,7 +272,7 @@ async function main() {
   });
 
   console.log(`Seeded admin user: ${admin.email}`);
-  console.log(`Seeded demo content: ${news.length} news articles, ${videos.length} videos, ${programs.length} programs, 1 gallery album, 1 press release, 2 announcements.`);
+  console.log(`Seeded demo content: ${news.length} news articles, ${videos.length} videos, ${programs.length} programs, 1 gallery album, 1 press release, 2 announcements, 3 partners.`);
   console.log(`IMPORTANT: change the admin password immediately after first login.`);
 }
 

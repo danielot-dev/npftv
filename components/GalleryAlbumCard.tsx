@@ -25,7 +25,7 @@ export default function GalleryAlbumCard({ album }: { album: AlbumCardItem }) {
             className="object-cover transition duration-300 group-hover:scale-[1.03]"
           />
         ) : (
-          <MediaPlaceholder className="h-full w-full" variant="gold" />
+          <MediaPlaceholder className="h-full w-full" variant="royal" />
         )}
       </div>
       <h3 className="mt-3 font-heading text-base font-semibold text-navy group-hover:text-navy-light">
