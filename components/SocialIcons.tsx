@@ -56,13 +56,28 @@ const PLATFORMS: {
   },
 ];
 
-export default async function SocialIcons({ className = "" }: { className?: string }) {
+export default async function SocialIcons({
+  className = "",
+  variant = "light",
+}: {
+  className?: string;
+  variant?: "light" | "dark";
+}) {
   const settings = await getSiteSettings();
   const active = PLATFORMS.filter((p) => settings?.[p.key]);
 
   if (active.length === 0) {
-    return <p className="text-sm text-navy-dark/50">Coming soon.</p>;
+    return (
+      <p className={`text-sm ${variant === "dark" ? "text-white/50" : "text-navy-dark/50"}`}>
+        Coming soon.
+      </p>
+    );
   }
+
+  const iconClass =
+    variant === "dark"
+      ? "flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-royal-light hover:bg-royal-light hover:text-navy"
+      : "flex h-9 w-9 items-center justify-center rounded-full border border-navy/20 text-navy transition hover:border-royal hover:bg-royal hover:text-white";
 
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
@@ -74,7 +89,7 @@ export default async function SocialIcons({ className = "" }: { className?: stri
           rel="noopener noreferrer"
           aria-label={platform.label}
           title={platform.label}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-navy/20 text-navy transition hover:border-royal hover:bg-royal hover:text-white"
+          className={iconClass}
         >
           {platform.icon}
         </a>

@@ -9,40 +9,40 @@ export default async function SiteFooter() {
   const visiblePartners = partners.slice(0, FOOTER_PARTNER_LIMIT);
 
   return (
-    <footer className="border-t border-royal/40 bg-offwhite">
+    <footer className="border-t border-royal/40 bg-navy">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
         <div>
-          <h3 className="font-heading text-lg font-bold text-navy">
-            NPF <span className="text-royal-dark">TV</span>
+          <h3 className="font-heading text-lg font-bold text-white">
+            NPF <span className="text-royal-light">TV</span>
           </h3>
-          <p className="mt-3 text-sm text-navy-dark/80">
+          <p className="mt-3 text-sm text-white/70">
             The official media platform of the Nigeria Police Force.
           </p>
         </div>
 
         <div>
-          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-dark">
+          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-light">
             Quick Links
           </h4>
-          <ul className="mt-3 space-y-2 text-sm text-navy-dark">
-            <li><Link href="/news" className="hover:text-royal-dark">News</Link></li>
-            <li><Link href="/live" className="hover:text-royal-dark">Live TV</Link></li>
-            <li><Link href="/programs" className="hover:text-royal-dark">Programs</Link></li>
-            <li><Link href="/press-centre" className="hover:text-royal-dark">Press Centre</Link></li>
-            <li><Link href="/find-a-police-station" className="hover:text-royal-dark">Find a Police Station</Link></li>
-            <li><Link href="/crime-prevention" className="hover:text-royal-dark">Crime Prevention</Link></li>
-            <li><Link href="/stats-and-data" className="hover:text-royal-dark">Stats and Data</Link></li>
-            <li><Link href="/report" className="hover:text-royal-dark">Report</Link></li>
+          <ul className="mt-3 space-y-2 text-sm text-white/80">
+            <li><Link href="/news" className="hover:text-royal-light">News</Link></li>
+            <li><Link href="/live" className="hover:text-royal-light">Live TV</Link></li>
+            <li><Link href="/programs" className="hover:text-royal-light">Programs</Link></li>
+            <li><Link href="/press-centre" className="hover:text-royal-light">Press Centre</Link></li>
+            <li><Link href="/find-a-police-station" className="hover:text-royal-light">Find a Police Station</Link></li>
+            <li><Link href="/crime-prevention" className="hover:text-royal-light">Crime Prevention</Link></li>
+            <li><Link href="/stats-and-data" className="hover:text-royal-light">Stats and Data</Link></li>
+            <li><Link href="/report" className="hover:text-royal-light">Report</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-dark">
+          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-light">
             Partners
           </h4>
-          <ul className="mt-3 space-y-2 text-sm text-navy-dark">
+          <ul className="mt-3 space-y-2 text-sm text-white/80">
             {visiblePartners.length === 0 ? (
-              <li className="text-navy-dark/50">Coming soon</li>
+              <li className="text-white/50">Coming soon</li>
             ) : (
               visiblePartners.map((partner) => (
                 <li key={partner.id}>
@@ -51,7 +51,7 @@ export default async function SiteFooter() {
                       href={partner.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-royal-dark"
+                      className="hover:text-royal-light"
                     >
                       {partner.name}
                     </a>
@@ -62,7 +62,7 @@ export default async function SiteFooter() {
               ))
             )}
             <li>
-              <Link href="/partners" className="font-semibold text-royal-dark hover:text-royal">
+              <Link href="/partners" className="font-semibold text-royal-light hover:text-royal">
                 View all partners →
               </Link>
             </li>
@@ -70,31 +70,31 @@ export default async function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-dark">
+          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-light">
             Emergency Contact
           </h4>
-          <ul className="mt-3 space-y-2 text-sm text-navy-dark">
+          <ul className="mt-3 space-y-2 text-sm text-white/80">
             <li>
               Emergency Line:{" "}
-              <span className="font-semibold text-navy">{settings?.emergencyPhone ?? "112"}</span>
+              <span className="font-semibold text-white">{settings?.emergencyPhone ?? "112"}</span>
             </li>
-            <li>Toll-Free: <span className="font-semibold text-navy">0800-CALL-NPF</span></li>
-            <li><Link href="/contact" className="hover:text-royal-dark">Full contact directory →</Link></li>
+            <li>Toll-Free: <span className="font-semibold text-white">0800-CALL-NPF</span></li>
+            <li><Link href="/contact" className="hover:text-royal-light">Full contact directory →</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-dark">
+          <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-royal-light">
             Follow NPF TV
           </h4>
           <div className="mt-3">
-            <SocialIcons />
+            <SocialIcons variant="dark" />
           </div>
         </div>
       </div>
 
       <div className="royal-divider" />
-      <p className="px-4 py-4 text-center text-xs text-navy-dark/60 lg:px-8">
+      <p className="px-4 py-4 text-center text-xs text-white/50 lg:px-8">
         © {new Date().getFullYear()} Nigeria Police Force TV. All rights reserved.
       </p>
     </footer>
