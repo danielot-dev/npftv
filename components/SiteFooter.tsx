@@ -33,6 +33,7 @@ export default async function SiteFooter() {
             Quick Links
           </h4>
           <ul className="mt-3 space-y-2 text-sm text-white/80">
+            <li><Link href="/about" className="hover:text-royal-light">About</Link></li>
             <li><Link href="/news" className="hover:text-royal-light">News</Link></li>
             <li><Link href="/live" className="hover:text-royal-light">Live TV</Link></li>
             <li><Link href="/programs" className="hover:text-royal-light">Programs</Link></li>

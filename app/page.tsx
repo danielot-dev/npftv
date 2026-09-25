@@ -1,5 +1,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ForceIdentityBanner from "@/components/ForceIdentityBanner";
 import SubscribeSection from "@/components/SubscribeSection";
 import SectionHeading from "@/components/SectionHeading";
 import { LeadNewsCard, CompactNewsCard } from "@/components/NewsCard";
@@ -68,6 +69,8 @@ export default async function HomePage() {
             )}
           </div>
         </section>
+
+        <ForceIdentityBanner />
 
         {/* Programs strip */}
         <section className="border-t border-navy/10">
