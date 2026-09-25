@@ -38,14 +38,14 @@ export default function MobileMenu() {
       </button>
 
       {open && (
-        <nav className="glass fade-in-up absolute inset-x-0 top-full border-b-0">
+        <nav className="fade-in-up absolute inset-x-0 top-full border-b border-royal/30 bg-white shadow-glass-sm">
           <ul className="mx-auto max-w-7xl divide-y divide-navy/10 px-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 font-heading text-sm font-medium text-navy-dark"
+                  className="block py-3 font-heading text-sm font-medium text-navy-dark transition hover:text-royal-dark"
                 >
                   {link.label}
                 </Link>

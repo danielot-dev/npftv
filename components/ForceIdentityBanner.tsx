@@ -29,7 +29,7 @@ export default function ForceIdentityBanner() {
               The Broadcast Voice of the Nigeria Police Force
             </p>
             <p className="mx-auto mt-3 max-w-2xl text-sm text-white/75 lg:mx-0 lg:text-base">
-              NPF TV brings Nigerians closer to their Police Force; live broadcasts, breaking news,
+              NPF TV brings Nigerians closer to their Police Force — live broadcasts, breaking news,
               documentaries, and programs that promote transparency, public safety awareness, and
               community trust.
             </p>
