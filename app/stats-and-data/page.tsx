@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = { title: "Stats and Data" };
 
@@ -22,18 +23,15 @@ export default function StatsAndDataPage() {
   return (
     <>
       <SiteHeader />
+      <PageHero
+        eyebrow="Transparency"
+        title="Stats and Data"
+        description="Key figures on the Nigeria Police Force's operations and public safety coverage. This page will expand as more verified datasets are cleared for publication."
+      />
       <main className="mx-auto max-w-6xl px-4 py-10 lg:px-8">
-        <h1 className="mb-3 border-b-2 border-navy pb-3 font-heading text-3xl font-extrabold text-navy">
-          Stats and Data
-        </h1>
-        <p className="mb-8 max-w-3xl text-sm text-navy-dark/75">
-          Key figures on the Nigeria Police Force&rsquo;s operations and public safety coverage. This
-          page will expand as more verified datasets are cleared for publication.
-        </p>
-
         <div className="grid gap-6 sm:grid-cols-3">
           {HEADLINE_STATS.map((stat) => (
-            <div key={stat.label} className="border border-navy/10 bg-white p-6 text-center">
+            <div key={stat.label} className="glass glass-hover fade-in-up rounded-2xl p-6 text-center">
               <p className="font-heading text-4xl font-extrabold text-royal-dark">{stat.value}</p>
               <p className="mt-2 font-heading text-sm font-semibold text-navy">{stat.label}</p>
               {stat.note && <p className="mt-1 text-xs text-navy-dark/60">{stat.note}</p>}
@@ -41,7 +39,7 @@ export default function StatsAndDataPage() {
           ))}
         </div>
 
-        <div className="mt-10 border border-dashed border-navy/20 bg-white p-6">
+        <div className="glass mt-10 rounded-2xl border-dashed border-navy/15 p-6">
           <h2 className="font-heading text-lg font-bold text-navy">Detailed data &amp; trends</h2>
           <p className="mt-2 text-sm text-navy-dark/70">{TREND_NOTE}</p>
         </div>

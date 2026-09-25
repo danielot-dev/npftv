@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import PageHero from "@/components/PageHero";
 import ReportForm from "@/components/ReportForm";
 import { getSiteSettings } from "@/lib/data";
 
@@ -12,14 +13,15 @@ export default async function ReportPage() {
   return (
     <>
       <SiteHeader />
+      <PageHero
+        eyebrow="Speak Up"
+        title="Report"
+        description="Report a crime, incident, or concern — anonymously if you prefer. All reports are reviewed by our team."
+      />
       <main className="mx-auto max-w-6xl px-4 py-10 lg:px-8">
-        <h1 className="mb-8 border-b-2 border-navy pb-3 font-heading text-3xl font-extrabold text-navy">
-          Report
-        </h1>
-
         <div className="grid gap-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <div className="border-l-4 border-signal bg-white p-6">
+            <div className="glass fade-in-up rounded-2xl border-l-4 border-signal p-6">
               <h2 className="font-heading text-lg font-bold text-navy">Emergency in progress?</h2>
               <p className="mt-3 font-condensed text-3xl font-bold text-signal">
                 {settings?.emergencyPhone ?? "112"}
@@ -29,7 +31,7 @@ export default async function ReportPage() {
               </p>
             </div>
 
-            <div className="mt-6 border border-navy/10 bg-white p-6">
+            <div className="glass mt-6 rounded-2xl p-6">
               <h2 className="font-heading text-lg font-bold text-navy">About this form</h2>
               <p className="mt-2 text-sm text-navy-dark/75">
                 Use this form to report a crime, incident, or concern that is not an active emergency.

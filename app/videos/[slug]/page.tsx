@@ -43,9 +43,9 @@ export default async function VideoDetailPage({ params }: { params: { slug: stri
     <>
       <SiteHeader />
       <main className="mx-auto max-w-5xl px-4 py-10 lg:px-8">
-        <div className="aspect-video w-full overflow-hidden bg-navy-dark">
+        <div className="glass aspect-video w-full overflow-hidden rounded-2xl p-2">
           <iframe
-            className="h-full w-full"
+            className="h-full w-full rounded-xl"
             src={`https://www.youtube.com/embed/${video.youtubeId}`}
             title={video.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

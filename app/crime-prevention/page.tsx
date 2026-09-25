@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import PageHero from "@/components/PageHero";
 import { getSiteSettings } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Crime Prevention" };
@@ -54,16 +55,13 @@ export default async function CrimePreventionPage() {
   return (
     <>
       <SiteHeader />
+      <PageHero
+        eyebrow="Stay Safe"
+        title="Crime Prevention"
+        description="Practical guidance from the Nigeria Police Force to help you protect yourself, your family, and your community. Prevention starts with awareness — and with reporting what you see."
+      />
       <main className="mx-auto max-w-6xl px-4 py-10 lg:px-8">
-        <h1 className="mb-3 border-b-2 border-navy pb-3 font-heading text-3xl font-extrabold text-navy">
-          Crime Prevention
-        </h1>
-        <p className="mb-8 max-w-3xl text-sm text-navy-dark/75">
-          Practical guidance from the Nigeria Police Force to help you protect yourself, your family,
-          and your community. Prevention starts with awareness — and with reporting what you see.
-        </p>
-
-        <div className="mb-10 border-l-4 border-signal bg-white p-6">
+        <div className="glass fade-in-up mb-10 rounded-2xl border-l-4 border-signal p-6">
           <h2 className="font-heading text-lg font-bold text-navy">See something? Say something.</h2>
           <p className="mt-2 text-sm text-navy-dark/75">
             For emergencies, call{" "}
@@ -78,12 +76,12 @@ export default async function CrimePreventionPage() {
 
         <div className="grid gap-8 lg:grid-cols-2">
           {TIP_CATEGORIES.map((category) => (
-            <div key={category.title} className="border border-navy/10 bg-white p-6">
+            <div key={category.title} className="glass rounded-2xl p-6">
               <h2 className="mb-4 font-heading text-lg font-bold text-navy">{category.title}</h2>
               <ul className="space-y-3">
                 {category.tips.map((tip) => (
                   <li key={tip} className="flex gap-3 text-sm text-navy-dark/80">
-                    <span aria-hidden="true" className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-royal" />
+                    <span aria-hidden="true" className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-royal shadow-glow" />
                     <span>{tip}</span>
                   </li>
                 ))}

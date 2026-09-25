@@ -24,17 +24,17 @@ export default async function NewsPage({
     <>
       <SiteHeader />
       <main className="mx-auto max-w-7xl px-4 py-10 lg:px-8">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b-2 border-navy pb-3">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-navy/10 pb-4">
           <h1 className="font-heading text-3xl font-extrabold text-navy">
             {activeCategory ?? "News"}
           </h1>
           <div className="flex flex-wrap gap-2">
             <Link
               href="/news"
-              className={`rounded-full border px-3 py-1 font-condensed text-xs font-semibold uppercase tracking-wide transition ${
+              className={`rounded-full border px-3 py-1 font-condensed text-xs font-semibold uppercase tracking-wide backdrop-blur-sm transition ${
                 !activeCategory
-                  ? "border-navy bg-navy text-white"
-                  : "border-navy/20 text-navy-dark hover:border-navy"
+                  ? "border-royal bg-royal text-white shadow-glow"
+                  : "border-navy/15 bg-white/50 text-navy-dark hover:border-royal hover:text-royal-dark"
               }`}
             >
               All
@@ -43,10 +43,10 @@ export default async function NewsPage({
               <Link
                 key={c.category}
                 href={`/news?category=${encodeURIComponent(c.category)}`}
-                className={`rounded-full border px-3 py-1 font-condensed text-xs font-semibold uppercase tracking-wide transition ${
+                className={`rounded-full border px-3 py-1 font-condensed text-xs font-semibold uppercase tracking-wide backdrop-blur-sm transition ${
                   activeCategory === c.category
-                    ? "border-navy bg-navy text-white"
-                    : "border-navy/20 text-navy-dark hover:border-navy"
+                    ? "border-royal bg-royal text-white shadow-glow"
+                    : "border-navy/15 bg-white/50 text-navy-dark hover:border-royal hover:text-royal-dark"
                 }`}
               >
                 {c.category}
@@ -65,7 +65,7 @@ export default async function NewsPage({
             <div className="lg:col-span-2">
               <LeadNewsCard article={lead} />
             </div>
-            <div>
+            <div className="divide-y divide-navy/5">
               {rest.slice(0, 6).map((article) => (
                 <CompactNewsCard key={article.id} article={article} />
               ))}

@@ -48,7 +48,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-royal/50 bg-white px-6 py-8 text-center">
+      <div className="glass fade-in-up rounded-2xl px-6 py-8 text-center">
         <h3 className="font-heading text-lg font-bold text-navy">Message sent</h3>
         <p className="mt-2 text-sm text-navy-dark/75">
           Thank you for reaching out. Your message has been received and will be reviewed by our team.
@@ -75,7 +75,7 @@ export default function ContactForm() {
             name="name"
             type="text"
             required
-            className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
+            className="mt-1 w-full rounded-xl border border-navy/15 bg-white/60 px-3 py-2.5 text-navy-dark backdrop-blur-sm outline-none transition focus:border-royal focus:bg-white/80 focus:shadow-glow"
           />
         </div>
         <div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
-            className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
+            className="mt-1 w-full rounded-xl border border-navy/15 bg-white/60 px-3 py-2.5 text-navy-dark backdrop-blur-sm outline-none transition focus:border-royal focus:bg-white/80 focus:shadow-glow"
           />
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
-          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
+          className="mt-1 w-full rounded-xl border border-navy/15 bg-white/60 px-3 py-2.5 text-navy-dark backdrop-blur-sm outline-none transition focus:border-royal focus:bg-white/80 focus:shadow-glow"
         />
       </div>
 
@@ -113,7 +113,7 @@ export default function ContactForm() {
           name="subject"
           type="text"
           required
-          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
+          className="mt-1 w-full rounded-xl border border-navy/15 bg-white/60 px-3 py-2.5 text-navy-dark backdrop-blur-sm outline-none transition focus:border-royal focus:bg-white/80 focus:shadow-glow"
         />
       </div>
 
@@ -126,7 +126,7 @@ export default function ContactForm() {
           name="message"
           rows={5}
           required
-          className="mt-1 w-full border border-navy/20 bg-white px-3 py-2.5 text-navy-dark outline-none focus:border-royal"
+          className="mt-1 w-full rounded-xl border border-navy/15 bg-white/60 px-3 py-2.5 text-navy-dark backdrop-blur-sm outline-none transition focus:border-royal focus:bg-white/80 focus:shadow-glow"
         />
       </div>
 
@@ -139,7 +139,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="bg-navy px-6 py-2.5 font-heading text-sm font-semibold text-white transition hover:bg-navy-light disabled:opacity-60"
+        className="rounded-xl bg-navy px-6 py-2.5 font-heading text-sm font-semibold text-white shadow-glass-sm transition hover:bg-navy-light hover:shadow-glow disabled:opacity-60"
       >
         {status === "loading" ? "Sending…" : "Send message"}
       </button>

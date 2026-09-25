@@ -27,39 +27,50 @@ export default async function HomePage() {
       <SiteHeader />
       <main>
         {/* Hero / bulletin */}
-        <section className="mx-auto max-w-7xl px-4 py-10 lg:px-8 lg:py-14">
-          {featured ? (
-            <div className="grid gap-10 lg:grid-cols-3">
-              <div className="lg:col-span-2">
-                <LeadNewsCard article={featured} />
-              </div>
-              <div>
-                <h2 className="border-b-2 border-navy pb-3 font-heading text-xl font-bold text-navy">
-                  Latest
-                </h2>
-                <div>
-                  {latest.length > 0 ? (
-                    latest.slice(0, 4).map((article) => (
-                      <CompactNewsCard key={article.id} article={article} />
-                    ))
-                  ) : (
-                    <p className="py-6 text-sm text-navy-dark/60">
-                      More stories will appear here as they're published.
-                    </p>
-                  )}
+        <section className="relative overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-royal/20 blur-3xl motion-safe:animate-mesh-drift"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-signal/15 blur-3xl"
+          />
+          <div className="relative mx-auto max-w-7xl px-4 py-10 lg:px-8 lg:py-14">
+            {featured ? (
+              <div className="grid gap-10 lg:grid-cols-3">
+                <div className="lg:col-span-2">
+                  <LeadNewsCard article={featured} />
+                </div>
+                <div className="glass fade-in-up rounded-2xl p-5">
+                  <h2 className="relative border-b border-navy/10 pb-3 font-heading text-xl font-bold text-navy">
+                    Latest
+                    <span className="absolute -bottom-[1px] left-0 h-0.5 w-10 rounded-full bg-royal" />
+                  </h2>
+                  <div className="divide-y divide-navy/5">
+                    {latest.length > 0 ? (
+                      latest.slice(0, 4).map((article) => (
+                        <CompactNewsCard key={article.id} article={article} />
+                      ))
+                    ) : (
+                      <p className="py-6 text-sm text-navy-dark/60">
+                        More stories will appear here as they're published.
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ) : (
-            <EmptyState
-              title="No news published yet"
-              description="Once the admin dashboard is live, featured stories will appear here as they're published."
-            />
-          )}
+            ) : (
+              <EmptyState
+                title="No news published yet"
+                description="Once the admin dashboard is live, featured stories will appear here as they're published."
+              />
+            )}
+          </div>
         </section>
 
         {/* Programs strip */}
-        <section className="border-t border-navy/10 bg-white">
+        <section className="border-t border-navy/10">
           <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
             <SectionHeading title="On Air This Week" viewAllHref="/programs" />
             {programs.length > 0 ? (
@@ -95,7 +106,7 @@ export default async function HomePage() {
         </section>
 
         {/* Gallery teaser */}
-        <section className="border-t border-navy/10 bg-white">
+        <section className="border-t border-navy/10">
           <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
             <SectionHeading title="Photo Gallery" viewAllHref="/gallery" />
             {albums.length > 0 ? (

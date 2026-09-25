@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import PageHero from "@/components/PageHero";
 import ProgramCard from "@/components/ProgramCard";
 import EmptyState from "@/components/EmptyState";
 import { getActivePrograms } from "@/lib/data";
@@ -13,11 +14,12 @@ export default async function ProgramsPage() {
   return (
     <>
       <SiteHeader />
+      <PageHero
+        eyebrow="On Air"
+        title="Programs"
+        description="NPF TV's regular programs and their broadcast schedule."
+      />
       <main className="mx-auto max-w-4xl px-4 py-10 lg:px-8">
-        <h1 className="mb-8 border-b-2 border-navy pb-3 font-heading text-3xl font-extrabold text-navy">
-          Programs
-        </h1>
-
         {programs.length === 0 ? (
           <EmptyState
             title="No programs listed yet"

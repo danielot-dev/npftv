@@ -85,7 +85,7 @@ export default async function NewsArticlePage({ params }: { params: { slug: stri
               <ShareButtons path={`/news/${article.slug}`} title={article.title} />
             </div>
 
-            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden">
+            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-glass-sm">
               {article.coverImage ? (
                 <Image src={article.coverImage} alt={article.title} fill className="object-cover" priority />
               ) : (
@@ -98,7 +98,7 @@ export default async function NewsArticlePage({ params }: { params: { slug: stri
             </div>
 
             {related.length > 0 && (
-              <section className="mt-14 border-t-2 border-navy pt-6">
+              <section className="mt-14 border-t border-navy/10 pt-6">
                 <h2 className="mb-2 font-heading text-xl font-bold text-navy">More News</h2>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {related.map((item) => (

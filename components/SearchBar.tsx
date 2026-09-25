@@ -21,11 +21,11 @@ export default function SearchBar({ initialQuery = "" }: { initialQuery?: string
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search news, videos, programs…"
-        className="w-full border border-navy/20 bg-white px-4 py-2.5 text-navy-dark outline-none focus:border-royal"
+        className="glass w-full rounded-xl px-4 py-2.5 text-navy-dark outline-none placeholder:text-navy-dark/40 focus:border-royal focus:shadow-glow"
       />
       <button
         type="submit"
-        className="shrink-0 bg-navy px-5 py-2.5 font-heading text-sm font-semibold text-white transition hover:bg-navy-light"
+        className="shrink-0 rounded-xl bg-navy px-5 py-2.5 font-heading text-sm font-semibold text-white shadow-glass-sm transition hover:bg-navy-light hover:shadow-glow"
       >
         Search
       </button>

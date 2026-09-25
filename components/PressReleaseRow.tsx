@@ -11,12 +11,12 @@ type PressReleaseItem = {
 
 export default function PressReleaseRow({ release }: { release: PressReleaseItem }) {
   return (
-    <div className="border-b border-navy/10 py-6 first:pt-0 last:border-b-0">
+    <div className="glass glass-hover mb-4 rounded-2xl p-6 last:mb-0">
       <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-navy-dark/50">
         {formatDate(release.publishedAt)}
       </p>
       <Link href={`/press-centre/${release.slug}`} className="group">
-        <h3 className="mt-1 font-heading text-lg font-bold text-navy group-hover:text-navy-light">
+        <h3 className="mt-1 font-heading text-lg font-bold text-navy group-hover:text-royal-dark">
           {release.title}
         </h3>
       </Link>

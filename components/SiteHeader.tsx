@@ -18,9 +18,9 @@ export default async function SiteHeader() {
   const stream = await getLiveStream();
   const isLive = stream?.isLive ?? false;
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur">
+    <header className="glass sticky top-0 z-50">
       <BreakingTicker />
-      <div className="relative border-b border-royal/40">
+      <div className="relative border-b border-royal/30">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
             <Image
@@ -28,7 +28,7 @@ export default async function SiteHeader() {
               alt="Nigeria Police Force TV"
               width={44}
               height={44}
-              className="h-11 w-11"
+              className="h-11 w-11 rounded-full shadow-glass-sm"
               priority
             />
             <span className="font-heading text-lg font-bold tracking-wide text-navy">
@@ -41,7 +41,7 @@ export default async function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-heading text-sm font-medium text-navy-dark transition hover:text-royal-dark"
+                className="relative font-heading text-sm font-medium text-navy-dark transition hover:text-royal-dark"
               >
                 {link.label}
               </Link>
@@ -49,7 +49,11 @@ export default async function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link href="/search" aria-label="Search" className="text-navy hover:text-royal-dark">
+            <Link
+              href="/search"
+              aria-label="Search"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-navy transition hover:bg-white/60 hover:text-royal-dark"
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="11" cy="11" r="7" />
                 <path d="m21 21-4.3-4.3" strokeLinecap="round" />
@@ -59,8 +63,8 @@ export default async function SiteHeader() {
               href="/live"
               className={
                 isLive
-                  ? "live-badge hidden sm:inline-flex"
-                  : "hidden items-center gap-1.5 border border-navy/20 px-2.5 py-0.5 font-condensed text-xs font-semibold uppercase tracking-wide text-navy-dark/70 transition hover:border-royal hover:text-royal-dark sm:inline-flex"
+                  ? "live-badge hidden shadow-glow sm:inline-flex"
+                  : "hidden items-center gap-1.5 rounded-full border border-navy/15 bg-white/40 px-2.5 py-0.5 font-condensed text-xs font-semibold uppercase tracking-wide text-navy-dark/70 backdrop-blur-sm transition hover:border-royal hover:text-royal-dark sm:inline-flex"
               }
             >
               {isLive ? "Live" : "Live TV"}

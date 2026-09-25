@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import PageHero from "@/components/PageHero";
 import VideoCard from "@/components/VideoCard";
 import EmptyState from "@/components/EmptyState";
 import { getProgramBySlug } from "@/lib/data";
@@ -32,18 +33,13 @@ export default async function ProgramDetailPage({ params }: { params: { slug: st
   return (
     <>
       <SiteHeader />
+      <PageHero
+        eyebrow={program.dayOfWeek || program.time ? `Airs ${program.dayOfWeek ?? ""} ${program.time ?? ""}`.trim() : "Program"}
+        title={program.name}
+        description={program.description}
+      />
       <main className="mx-auto max-w-7xl px-4 py-10 lg:px-8">
-        <div className="border-b-2 border-navy pb-6">
-          <h1 className="font-heading text-3xl font-extrabold text-navy">{program.name}</h1>
-          <p className="mt-2 max-w-2xl text-navy-dark/75">{program.description}</p>
-          {(program.dayOfWeek || program.time) && (
-            <p className="mt-3 font-condensed text-lg font-semibold text-royal-dark">
-              Airs {program.dayOfWeek} {program.time}
-            </p>
-          )}
-        </div>
-
-        <h2 className="mb-6 mt-10 font-heading text-xl font-bold text-navy">Episodes</h2>
+        <h2 className="mb-6 font-heading text-xl font-bold text-navy">Episodes</h2>
         {program.videos.length === 0 ? (
           <EmptyState
             title="No episodes published yet"

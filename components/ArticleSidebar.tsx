@@ -10,25 +10,26 @@ export default async function ArticleSidebar({ excludeId }: { excludeId?: string
   ]);
 
   return (
-    <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
+    <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
       {stream?.isLive && (
         <Link
           href="/live"
-          className="live-badge flex w-full items-center justify-center rounded-md py-3"
+          className="live-badge flex w-full items-center justify-center rounded-xl py-3 shadow-glow"
         >
           Watch NPF TV Live Now
         </Link>
       )}
 
-      <div>
-        <h2 className="mb-4 border-b-2 border-navy pb-2 font-heading text-sm font-bold uppercase tracking-wide text-navy">
+      <div className="glass rounded-2xl p-5">
+        <h2 className="relative mb-4 pb-2 font-heading text-sm font-bold uppercase tracking-wide text-navy">
           Latest News
+          <span className="absolute -bottom-[1px] left-0 h-0.5 w-8 rounded-full bg-royal" />
         </h2>
         <ul className="space-y-4">
           {latest.map((item) => (
             <li key={item.id}>
               <Link href={`/news/${item.slug}`} className="group block">
-                <p className="font-heading text-sm font-semibold leading-snug text-navy group-hover:text-navy-light">
+                <p className="font-heading text-sm font-semibold leading-snug text-navy group-hover:text-royal-dark">
                   {item.title}
                 </p>
                 <p className="mt-1 font-condensed text-xs text-navy-dark/50">
@@ -41,9 +42,10 @@ export default async function ArticleSidebar({ excludeId }: { excludeId?: string
       </div>
 
       {categories.length > 0 && (
-        <div>
-          <h2 className="mb-4 border-b-2 border-navy pb-2 font-heading text-sm font-bold uppercase tracking-wide text-navy">
+        <div className="glass rounded-2xl p-5">
+          <h2 className="relative mb-4 pb-2 font-heading text-sm font-bold uppercase tracking-wide text-navy">
             Categories
+            <span className="absolute -bottom-[1px] left-0 h-0.5 w-8 rounded-full bg-royal" />
           </h2>
           <ul className="space-y-2">
             {categories.map((c) => (

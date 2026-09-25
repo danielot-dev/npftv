@@ -27,8 +27,8 @@ export default function ScheduleSidebar({ programs }: { programs: ScheduleProgra
   });
 
   return (
-    <aside className="border border-navy/10 bg-white">
-      <div className="border-b border-royal/40 bg-navy px-5 py-4">
+    <aside className="glass overflow-hidden rounded-2xl">
+      <div className="border-b border-royal/40 bg-navy-gradient px-5 py-4">
         <h2 className="font-heading text-sm font-bold uppercase tracking-wide text-white">
           Programme Schedule
         </h2>
@@ -46,7 +46,7 @@ export default function ScheduleSidebar({ programs }: { programs: ScheduleProgra
               <li key={program.slug}>
                 <Link
                   href={`/programs/${program.slug}`}
-                  className={`flex items-center justify-between gap-3 px-5 py-4 transition hover:bg-offwhite ${
+                  className={`flex items-center justify-between gap-3 px-5 py-4 transition hover:bg-white/50 ${
                     isToday ? "bg-royal/10" : ""
                   }`}
                 >

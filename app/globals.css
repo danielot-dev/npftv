@@ -21,11 +21,54 @@ html {
 body {
   background-color: var(--color-offwhite);
   color: var(--color-navy-dark);
+  position: relative;
+}
+
+/* Ambient background glow — fixed so it stays put while the page scrolls.
+   Very low-opacity; purely atmospheric, never competes with content. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 15% 0%, rgba(46, 111, 242, 0.16) 0%, rgba(46, 111, 242, 0) 60%),
+    radial-gradient(50% 40% at 100% 20%, rgba(14, 165, 233, 0.14) 0%, rgba(14, 165, 233, 0) 60%),
+    radial-gradient(45% 45% at 50% 100%, rgba(46, 111, 242, 0.1) 0%, rgba(46, 111, 242, 0) 60%);
+  animation: meshDrift 24s ease-in-out infinite;
 }
 
 ::selection {
   background-color: var(--color-royal);
   color: white;
+}
+
+/* ---- Glassmorphism primitives ---- */
+
+.glass {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 24px rgba(9, 26, 48, 0.06);
+}
+
+.glass-dark {
+  background: rgba(15, 42, 74, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.glass-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.glass-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(46, 111, 242, 0.35);
+  box-shadow: 0 0 0 1px rgba(46, 111, 242, 0.15), 0 16px 40px rgba(46, 111, 242, 0.16);
 }
 
 /* Reusable "LIVE" pill, used sparingly per brand direction (signal blue = alert only) */
@@ -72,10 +115,43 @@ body {
   to { transform: translateX(-50%); }
 }
 
+@keyframes meshDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(1%, -1.5%, 0) scale(1.03); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 /* Visible keyboard focus throughout */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
   outline: 2px solid var(--color-royal);
   outline-offset: 2px;
+}
+
+/* Respect reduced-motion preferences — ambient/decorative animations off,
+   functional ones (focus outline, etc.) untouched. */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+  .fade-in-up,
+  .live-badge::before,
+  .ticker-track {
+    animation: none !important;
+  }
+  .glass-hover {
+    transition: none;
+  }
+  .glass-hover:hover {
+    transform: none;
+  }
 }

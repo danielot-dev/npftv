@@ -33,7 +33,7 @@ export default async function SearchPage({
             Search across news, videos, and programs.
           </p>
         ) : totalResults === 0 ? (
-          <div className="mt-10 border border-dashed border-navy/20 bg-white px-6 py-16 text-center">
+          <div className="glass mt-10 rounded-2xl border-dashed border-navy/15 px-6 py-16 text-center">
             <h2 className="font-heading text-lg font-semibold text-navy">
               No results for &ldquo;{query}&rdquo;
             </h2>
@@ -46,12 +46,12 @@ export default async function SearchPage({
           <div className="mt-10 space-y-12">
             {results.news.length > 0 && (
               <section>
-                <h2 className="mb-4 border-b-2 border-navy pb-2 font-heading text-lg font-bold text-navy">
+                <h2 className="relative mb-4 border-b border-navy/10 pb-2 font-heading text-lg font-bold text-navy">
                   News ({results.news.length})
                 </h2>
                 <div className="space-y-4">
                   {results.news.map((item) => (
-                    <Link key={item.id} href={`/news/${item.slug}`} className="group block">
+                    <Link key={item.id} href={`/news/${item.slug}`} className="group block rounded-xl p-3 transition hover:bg-white/60 hover:backdrop-blur-sm">
                       <CrestBadge label={item.category} />
                       <h3 className="mt-2 font-heading text-lg font-semibold text-navy group-hover:text-navy-light">
                         {item.title}
@@ -68,12 +68,12 @@ export default async function SearchPage({
 
             {results.videos.length > 0 && (
               <section>
-                <h2 className="mb-4 border-b-2 border-navy pb-2 font-heading text-lg font-bold text-navy">
+                <h2 className="relative mb-4 border-b border-navy/10 pb-2 font-heading text-lg font-bold text-navy">
                   Videos ({results.videos.length})
                 </h2>
                 <div className="space-y-4">
                   {results.videos.map((item) => (
-                    <Link key={item.id} href={`/videos/${item.slug}`} className="group block">
+                    <Link key={item.id} href={`/videos/${item.slug}`} className="group block rounded-xl p-3 transition hover:bg-white/60 hover:backdrop-blur-sm">
                       <p className="font-condensed text-xs font-semibold uppercase tracking-wide text-royal-dark">
                         {item.category}
                       </p>
@@ -89,12 +89,12 @@ export default async function SearchPage({
 
             {results.programs.length > 0 && (
               <section>
-                <h2 className="mb-4 border-b-2 border-navy pb-2 font-heading text-lg font-bold text-navy">
+                <h2 className="relative mb-4 border-b border-navy/10 pb-2 font-heading text-lg font-bold text-navy">
                   Programs ({results.programs.length})
                 </h2>
                 <div className="space-y-4">
                   {results.programs.map((item) => (
-                    <Link key={item.id} href={`/programs/${item.slug}`} className="group block">
+                    <Link key={item.id} href={`/programs/${item.slug}`} className="group block rounded-xl p-3 transition hover:bg-white/60 hover:backdrop-blur-sm">
                       <h3 className="font-heading text-lg font-semibold text-navy group-hover:text-navy-light">
                         {item.name}
                       </h3>
@@ -107,12 +107,12 @@ export default async function SearchPage({
 
             {results.press.length > 0 && (
               <section>
-                <h2 className="mb-4 border-b-2 border-navy pb-2 font-heading text-lg font-bold text-navy">
+                <h2 className="relative mb-4 border-b border-navy/10 pb-2 font-heading text-lg font-bold text-navy">
                   Press Centre ({results.press.length})
                 </h2>
                 <div className="space-y-4">
                   {results.press.map((item) => (
-                    <Link key={item.id} href={`/press-centre/${item.slug}`} className="group block">
+                    <Link key={item.id} href={`/press-centre/${item.slug}`} className="group block rounded-xl p-3 transition hover:bg-white/60 hover:backdrop-blur-sm">
                       <h3 className="font-heading text-lg font-semibold text-navy group-hover:text-navy-light">
                         {item.title}
                       </h3>

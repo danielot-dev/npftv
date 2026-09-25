@@ -82,7 +82,7 @@ export default async function PressReleaseDetailPage({ params }: { params: { slu
                 href={release.documentUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-block border border-navy px-5 py-2.5 font-heading text-sm font-semibold text-navy transition hover:bg-navy hover:text-white"
+                className="mt-8 inline-block rounded-xl border border-navy/60 bg-white/40 px-5 py-2.5 font-heading text-sm font-semibold text-navy backdrop-blur-sm transition hover:bg-navy hover:text-white hover:shadow-glow"
               >
                 Download official document
               </a>

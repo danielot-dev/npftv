@@ -11,7 +11,7 @@ export default function CrestBadge({ label }: { label: string }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border bg-white px-2.5 py-0.5 text-xs font-semibold ${style}`}
+      className={`shadow-glass-sm inline-flex items-center gap-1.5 rounded-full border bg-white/80 px-2.5 py-0.5 text-xs font-semibold backdrop-blur-sm ${style}`}
     >
       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
         <circle cx="5" cy="5" r="4" stroke="currentColor" strokeWidth="1.2" />

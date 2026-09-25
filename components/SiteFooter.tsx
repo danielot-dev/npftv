@@ -9,8 +9,16 @@ export default async function SiteFooter() {
   const visiblePartners = partners.slice(0, FOOTER_PARTNER_LIMIT);
 
   return (
-    <footer className="border-t border-royal/40 bg-navy">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
+    <footer className="relative overflow-hidden border-t border-royal/30 bg-navy-gradient">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-royal/15 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-signal/10 blur-3xl"
+      />
+      <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
         <div>
           <h3 className="font-heading text-lg font-bold text-white">
             NPF <span className="text-royal-light">TV</span>

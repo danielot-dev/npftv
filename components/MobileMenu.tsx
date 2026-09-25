@@ -23,7 +23,7 @@ export default function MobileMenu() {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="rounded-md border border-navy/30 p-2 text-navy"
+        className="glass rounded-xl p-2 text-navy transition hover:shadow-glow"
       >
         {open ? (
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -37,7 +37,7 @@ export default function MobileMenu() {
       </button>
 
       {open && (
-        <nav className="absolute inset-x-0 top-full border-b border-royal/40 bg-white shadow-lg">
+        <nav className="glass fade-in-up absolute inset-x-0 top-full border-b-0">
           <ul className="mx-auto max-w-7xl divide-y divide-navy/10 px-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>

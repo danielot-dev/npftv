@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import PageHero from "@/components/PageHero";
 import VideoCard from "@/components/VideoCard";
 import EmptyState from "@/components/EmptyState";
 import { getAllVideos } from "@/lib/data";
@@ -13,11 +14,12 @@ export default async function VideosPage() {
   return (
     <>
       <SiteHeader />
+      <PageHero
+        eyebrow="Watch"
+        title="Video Library"
+        description="Interviews, documentaries, programs, and past broadcasts from NPF TV."
+      />
       <main className="mx-auto max-w-7xl px-4 py-10 lg:px-8">
-        <h1 className="mb-8 border-b-2 border-navy pb-3 font-heading text-3xl font-extrabold text-navy">
-          Video Library
-        </h1>
-
         {videos.length === 0 ? (
           <EmptyState
             title="No videos published yet"

@@ -15,9 +15,9 @@ export default function ProgramCard({ program }: { program: ProgramCardItem }) {
   return (
     <Link
       href={`/programs/${program.slug}`}
-      className="group flex items-center gap-5 border-b border-navy/10 py-6 first:pt-0 last:border-b-0"
+      className="glass glass-hover group mb-4 flex items-center gap-5 rounded-2xl p-4 last:mb-0"
     >
-      <div className="relative h-24 w-24 shrink-0 overflow-hidden">
+      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl">
         {program.coverImage ? (
           <Image src={program.coverImage} alt={program.name} fill className="object-cover" />
         ) : (
@@ -25,7 +25,7 @@ export default function ProgramCard({ program }: { program: ProgramCardItem }) {
         )}
       </div>
       <div className="min-w-0 flex-1">
-        <h3 className="font-heading text-lg font-bold text-navy group-hover:text-navy-light">
+        <h3 className="font-heading text-lg font-bold text-navy group-hover:text-royal-dark">
           {program.name}
         </h3>
         <p className="mt-1 line-clamp-2 text-sm text-navy-dark/70">{program.description}</p>

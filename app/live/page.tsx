@@ -13,18 +13,18 @@ export default async function LivePage() {
     <>
       <SiteHeader />
       <main className="mx-auto max-w-7xl px-4 py-10 lg:px-8">
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b-2 border-navy pb-3">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-navy/10 pb-4">
           <h1 className="font-heading text-3xl font-extrabold text-navy">Live TV</h1>
-          {stream?.isLive && <span className="live-badge">On Air Now</span>}
+          {stream?.isLive && <span className="live-badge shadow-glow">On Air Now</span>}
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             {stream?.isLive ? (
               <>
-                <div className="aspect-video w-full overflow-hidden bg-navy-dark">
+                <div className="glass aspect-video w-full overflow-hidden rounded-2xl p-2">
                   <iframe
-                    className="h-full w-full"
+                    className="h-full w-full rounded-xl"
                     src={`https://www.youtube.com/embed/${stream.youtubeId}?autoplay=1`}
                     title={stream.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -34,7 +34,7 @@ export default async function LivePage() {
                 <h2 className="mt-4 font-heading text-xl font-bold text-navy">{stream.title}</h2>
               </>
             ) : (
-              <div className="flex aspect-video w-full flex-col items-center justify-center border border-dashed border-navy/20 bg-white px-6 text-center">
+              <div className="glass flex aspect-video w-full flex-col items-center justify-center rounded-2xl border-dashed border-navy/20 px-6 text-center">
                 <h2 className="font-heading text-xl font-semibold text-navy">
                   NPF TV is currently off air
                 </h2>
